@@ -16,7 +16,7 @@ Returns the top 50 coins by market cap.
 Endpoint
 GET https://rugplay.com/api/v1/top
 Example Response
-{
+```{
   "coins": [
     {
       "symbol": "TEST",
@@ -29,7 +29,7 @@ Example Response
     }
   ]
 }
-
+```
 Get Market Data
 GET /api/v1/market
 
@@ -46,7 +46,7 @@ changeFilter - Change filter: all, gainers, losers, hot, wild (default: all)
 page - Page number (default: 1)
 limit - Items per page, max 100 (default: 12)
 Example Response
-{
+```{
   "coins": [
     {
       "symbol": "TEST",
@@ -65,7 +65,7 @@ Example Response
   "limit": 12,
   "totalPages": 13
 }
-
+```
 Get Coin Details
 GET /api/v1/coin/{symbol}
 
@@ -77,6 +77,7 @@ Parameters
 symbol - Coin symbol (e.g., "TEST")
 timeframe - Optional. Chart timeframe: 1m, 5m, 15m, 1h, 4h, 1d (default: 1m)
 Example Response
+```
 {
   "coin": {
     "id": 2668,
@@ -116,7 +117,7 @@ Example Response
   ],
   "timeframe": "1m"
 }
-
+```
 Get Coin Holders
 GET /api/v1/holders/{symbol}
 
@@ -127,6 +128,7 @@ GET https://rugplay.com/api/v1/holders/{symbol}
 Parameters
 symbol - Coin symbol (e.g., "TEST")
 limit - Number of holders to return, max 200 (default: 50)
+```
 Example Response
 {
   "coinSymbol": "TEST",
@@ -150,7 +152,7 @@ Example Response
     }
   ]
 }
-
+```
 Get Prediction Markets (Hopium)
 GET /api/v1/hopium
 
@@ -162,6 +164,7 @@ Query Parameters
 status - Filter by status: ACTIVE, RESOLVED, CANCELLED, ALL (default: ACTIVE)
 page - Page number (default: 1)
 limit - Items per page, max 100 (default: 20)
+```
 Example Response
 {
   "questions": [
@@ -193,7 +196,7 @@ Example Response
   "limit": 20,
   "totalPages": 8
 }
-
+```
 Get Prediction Market Details
 GET /api/v1/hopium/{question_id}
 
@@ -203,6 +206,7 @@ Endpoint
 GET https://rugplay.com/api/v1/hopium/{question_id}
 Parameters
 question_id - Question ID (e.g., 101)
+```
 Example Response
 {
   "question": {
@@ -252,7 +256,7 @@ Example Response
     }
   ]
 }
-
+```
 Rate Limiting
 • Daily limit: 2,000 requests per day
 • Cost: 1 credit per API call
@@ -261,8 +265,10 @@ Rate Limiting
 
 Error Responses
 Common Error Codes
+```
 • 400 - Bad Request (invalid parameters)
 • 401 - Unauthorized (invalid or missing API key)
 • 404 - Not Found (coin/question doesn't exist)
 • 429 - Too Many Requests (rate limit exceeded)
 • 500 - Internal Server Error
+```
